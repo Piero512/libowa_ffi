@@ -1,0 +1,29 @@
+output: 'lib/src/oswrapper_audio.dart'
+headers:
+  entry-points:
+    - 'src/oswrapper_audio.h'
+  include-directives:
+    - '**oswrapper_audio.h'
+name: 'OWAudio'
+structs:
+  dependency-only: opaque
+typedefs:
+  expose-typedefs:
+    include:
+      - '.*'
+functions:
+  include:
+    - '.*'
+  symbol-address:
+    include:
+      - '.*'
+description: 'Bindings to OSWrapper Audio, a lib that uses the system codecs to decode audio' 
+comments:
+  style: any
+  length: full
+compiler-opts:
+  - '-DOSWRAPPER_AUDIO_EXPERIMENTAL=1'
+  - '-DOSWRAPPER_AUDIO_RESULT_TYPE=bool'
+  - '-DOSWRAPPER_AUDIO_RESULT_SUCCESS=true'
+  - '-DOSWRAPPER_AUDIO_RESULT_FAILURE=false'
+
